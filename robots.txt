@@ -1,0 +1,3 @@
+# Do not disallow this page: crawlers need access to read the noindex meta tag in index.html.
+User-agent: *
+Allow: /
