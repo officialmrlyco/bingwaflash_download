@@ -9,7 +9,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Download Bingwa Flash | Direct Android Install</title>
+  <title>Download Bingwa Flash v1.3.8 | Official Android APK</title>
   <meta name="description" content="Download the latest Bingwa Flash APK for Android agents. Direct installation for USSD automation, web orders, retries, relay tools and transaction recovery.">
   <!-- Search engines must be allowed to crawl this page so they can see the noindex instruction and drop it from results. -->
   <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
@@ -122,6 +122,9 @@
     .btn-download{width:100%;padding:14px 20px;background:linear-gradient(135deg,var(--g),var(--gd));color:#fff;box-shadow:var(--cg)}
     .note{margin-top:13px;color:var(--text3);font-size:.74rem;font-weight:700;line-height:1.6;text-align:center}
     .note strong{color:var(--text2)}
+    .integrity{margin-top:18px;padding:14px 15px;border:1.5px solid var(--border);border-radius:var(--r12);background:var(--surface2)}
+    .integrity strong{display:block;margin-bottom:5px;font-size:.76rem;color:var(--text)}
+    .integrity code{display:block;color:var(--text3);font-size:.68rem;line-height:1.55;overflow-wrap:anywhere;user-select:all}
 
     /* Side panels explain requirements and setup without hiding important permissions. */
     .side{display:grid;gap:16px}
@@ -134,28 +137,78 @@
     .wa-link{padding:11px 16px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:var(--cg)}
     .install-steps{margin-top:22px;padding-top:22px;border-top:2px solid var(--border)}
 
-    footer{background:var(--surface);border-top:2px solid var(--border);padding:27px 32px;transition:background .25s,border-color .25s}
-    .ft-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+    .download-section{padding:0 0 70px}
+    .download-section.alt{padding-top:6px}
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .contact-card,.tutorial-card{
+      background:linear-gradient(180deg,var(--card-bg),var(--card-end));border:1.5px solid var(--border);
+      border-radius:var(--r20);padding:20px;box-shadow:var(--cs);transition:transform .18s,border-color .18s,background .25s;
+    }
+    .contact-card:hover,.tutorial-card:hover{transform:translateY(-3px);border-color:rgba(16,185,129,.38)}
+    .contact-card small,.tutorial-card small{display:block;margin-bottom:7px;color:var(--gd);font-size:.66rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .contact-card h2,.tutorial-card h2{font-family:"Sora",sans-serif;font-size:.98rem;font-weight:900;color:var(--text);margin-bottom:8px}
+    .contact-card p,.tutorial-card p{color:var(--text2);font-size:.8rem;line-height:1.65;font-weight:650;margin-bottom:13px}
+    .contact-card a{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:var(--pill);background:var(--surface2);border:1.5px solid var(--border);color:var(--text2);font-weight:900;font-size:.76rem;text-decoration:none}
+    .contact-card a.primary{background:linear-gradient(135deg,var(--g),var(--gd));border-color:transparent;color:#fff;box-shadow:var(--cg)}
+    .tutorial-head{display:grid;grid-template-columns:.82fr 1fr;gap:32px;align-items:end;margin-bottom:20px}
+    .tutorial-head h2{font-family:"Sora",sans-serif;font-size:clamp(1.65rem,3vw,2.45rem);font-weight:900;line-height:1.15;margin:12px 0 0;color:var(--text)}
+    .tutorial-head h2 em{font-style:normal;color:var(--gd)}
+    .tutorial-head p{color:var(--text2);font-size:.9rem;line-height:1.75;font-weight:650}
+    .tutorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .tutorial-card{cursor:pointer;text-align:left}
+    .tutorial-card:focus-visible{outline:3px solid rgba(16,185,129,.45);outline-offset:3px}
+    .video-thumb{position:relative;aspect-ratio:16/9;border-radius:var(--r16);overflow:hidden;background:var(--surface2);border:1.5px solid var(--border);margin-bottom:14px}
+    .video-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92)}
+    .video-placeholder{height:100%;display:grid;place-items:center;text-align:center;padding:16px;color:var(--text3);font-size:.78rem;font-weight:900;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(251,191,36,.10))}
+    .play-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:var(--pill);display:grid;place-items:center;background:rgba(9,13,12,.74);border:1.5px solid rgba(255,255,255,.18);color:#fff;box-shadow:var(--cs)}
+    .play-mark::before{content:"";display:block;width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid currentColor;margin-left:3px}
+    .tutorial-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-bottom:8px}
+    .tutorial-chip,.tutorial-label{border-radius:var(--pill);padding:4px 9px;font-size:.64rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+    .tutorial-chip{background:rgba(251,191,36,.14);border:1px solid rgba(251,191,36,.28);color:var(--yd)}
+    .tutorial-label{background:rgba(16,185,129,.13);border:1px solid rgba(16,185,129,.27);color:var(--gd)}
+    .tutorial-duration{color:var(--text3);font-size:.74rem;font-weight:900}
+    .view-all-row{display:flex;justify-content:center;margin-top:18px}
+
+    .video-modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.72)}
+    .video-modal[hidden]{display:none}
+    body.modal-open{overflow:hidden}
+    .modal-dialog{width:min(920px,100%);background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r20);box-shadow:var(--cl);overflow:hidden}
+    .modal-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1.5px solid var(--border)}
+    .modal-head h2{margin:0;font-size:.98rem}
+    .modal-close{width:34px;height:34px;border-radius:var(--pill);border:1.5px solid var(--border);background:var(--surface2);color:var(--text2);cursor:pointer;font-size:1.25rem;line-height:1}
+    .modal-frame{aspect-ratio:16/9;background:#000}
+    .modal-frame iframe{width:100%;height:100%;border:0;display:block}
+    .modal-empty{min-height:260px;display:grid;place-items:center;text-align:center;padding:28px;color:var(--text2);font-weight:800;background:var(--surface2)}
+
+    footer{background:var(--surface);border-top:2px solid var(--border);padding:34px 32px 24px;transition:background .25s,border-color .25s}
+    .ft-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:24px;align-items:start}
     .ft-logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:inherit}
     .ft-logo img{width:26px;height:26px;border-radius:7px;object-fit:contain}
     .ft-name{font-family:"Sora",sans-serif;font-size:.82rem;font-weight:800;color:var(--text2)}
-    .ft-links{display:flex;gap:18px;flex-wrap:wrap}
-    .ft-links a{font-size:.76rem;font-weight:800;color:var(--text3);text-decoration:none;transition:color .15s}
+    .ft-about{display:grid;gap:12px}
+    .ft-about p{max-width:320px;color:var(--text3);font-size:.78rem;font-weight:700;line-height:1.65}
+    .ft-col{display:grid;gap:9px}
+    .ft-col h2{font-family:"Sora",sans-serif;font-size:.78rem;font-weight:900;color:var(--text);margin-bottom:3px}
+    .ft-links{display:grid;gap:8px}
+    .ft-links a,.ft-links span{font-size:.76rem;font-weight:800;color:var(--text3);text-decoration:none;transition:color .15s}
     .ft-links a:hover{color:var(--text2)}
-    .ft-copy{font-size:.72rem;color:var(--text3);font-weight:700}
+    .ft-copy{max-width:1120px;margin:24px auto 0;padding-top:16px;border-top:1.5px solid var(--border);font-size:.72rem;color:var(--text3);font-weight:700}
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
     .reveal.on{opacity:1;transform:none}
 
     @media(max-width:900px){
-      .layout{grid-template-columns:1fr}.side{order:-1;grid-template-columns:repeat(2,1fr)}
+      /* Keep the installer card first when the layout stacks; setup help follows the primary action. */
+      .layout{grid-template-columns:1fr}.side{grid-template-columns:repeat(2,1fr)}
       .meta{grid-template-columns:repeat(3,1fr)}
+      .contact-grid,.tutorial-grid{grid-template-columns:repeat(2,1fr)}
+      .tutorial-head{grid-template-columns:1fr}
     }
     @media(max-width:740px){
       header{height:60px;padding:0 16px}nav{display:none}.logo-text{font-size:.88rem}.hdr-cta{padding:8px 13px;font-size:.78rem}
       .wrap{width:min(100% - 32px,1120px)}.page-hero{padding:42px 0 30px}
-      .layout{padding-bottom:58px}.side{grid-template-columns:1fr}.meta{grid-template-columns:1fr}
+      .layout{padding-bottom:58px}.side{grid-template-columns:1fr}.meta,.contact-grid,.tutorial-grid{grid-template-columns:1fr}
       .release{align-items:flex-start;flex-direction:column}.body{padding:20px}
-      .ft-in{flex-direction:column;text-align:center}
+      .download-section{padding-bottom:54px}.ft-in{grid-template-columns:1fr;text-align:left}.ft-copy{text-align:left}
     }
   </style>
 </head>
@@ -170,14 +223,15 @@
       <a href="https://bingwaflash.co.ke/#features">Features</a>
       <a href="https://bingwaflash.co.ke/#workflow">How it works</a>
       <a class="on" href="/">Download</a>
-      <a href="https://bingwaflash.co.ke/privacy.html">Privacy</a>
+      <a href="/tutorials/">Tutorials</a>
+      <a href="#contacts">Contact</a>
     </nav>
     <div class="hdr-r">
       <button class="thm" onclick="toggleTheme()" type="button" title="Toggle theme" aria-label="Toggle dark/light mode">
         <svg id="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
         <svg id="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
       </button>
-      <a class="hdr-cta" href="https://wa.me/254748008585" target="_blank" rel="noopener">Support</a>
+      <a class="hdr-cta" href="https://chat.whatsapp.com/H2YoZHNmiuB6cxWsfOPV1I" target="_blank" rel="noopener">Join group</a>
     </div>
   </header>
 
@@ -195,28 +249,35 @@
     <div class="wrap">
       <div class="layout">
         <section class="card reveal" aria-label="Latest Bingwa Flash APK">
-          <div class="release"><span>Latest supported release</span><strong>v1.3.0 - Build 30</strong></div>
+          <div class="release"><span>Latest supported release</span><strong>v1.3.8 - Build 38</strong></div>
           <div class="body">
             <div class="meta">
-              <div class="stat"><small>File size</small><strong>13.4 MB</strong></div>
-              <div class="stat"><small>Released</small><strong>June 12, 2026</strong></div>
+              <div class="stat"><small>File size</small><strong>15.3 MB</strong></div>
+              <div class="stat"><small>Released</small><strong>Aug 27, 2026</strong></div>
               <div class="stat"><small>Platform</small><strong>Android 7+</strong></div>
             </div>
-            <h2>What this release is for</h2>
+            <h2>What is new in v1.3.8</h2>
             <ul class="release-list">
-              <li>USSD automation with mapped offer flows and guarded transaction states.</li>
-              <li>Tracer support, UI changes, minor adjustments, bug fixes and performance improvements.</li>
-              <li>Web orders, relay workflows, retry recovery, alerts and transaction history.</li>
+              <li>A redesigned Offers catalogue with compact routes, fixed search and category controls, safer offer collision review, and clearer mapping, verifier, retry, and Auto Time actions.</li>
+              <li>A guided Relay setup for Sender and Receiver using SMS, Online, Hotspot/Wi-Fi, or Bluetooth, with built-in QR pairing and normal transaction history.</li>
+              <li>More reliable payment queues, pending-work recovery, retry wake-ups, and accurate Accessibility readiness so one failed handoff cannot hold every later transaction.</li>
+              <li>Refreshed Settings, Site Link, Auto Reply, Client, Transaction Detail, Quick Dial, and Statistics screens with safer editing and clearer save or failure feedback.</li>
+              <li>Quick Dial contact search keeps customer-number input numeric, while Auto Reply templates use protected bottom-sheet editing.</li>
+              <li>Stronger security PIN recovery, mapping-learning validation, Relay duplicate protection, sender auto-reply isolation, and lower-memory transaction and M-Pesa history handling.</li>
             </ul>
-            <a class="btn-download" href="https://github.com/officialmrlyco/BingwaFlashApp/releases/download/v1.3.0/BingwaFlash_v1.3.0.apk">Download APK - v1.3.0</a>
+            <a class="btn-download" href="https://github.com/officialmrlyco/BingwaFlashApp/releases/download/v38/BingwaFlash_v1.3.8.apk">Download APK - v1.3.8</a>
             <p class="note">Android may ask you to allow installation from this browser before opening the APK. Only install from this official Bingwa Flash link.</p>
+            <div class="integrity">
+              <strong>APK SHA-256 checksum</strong>
+              <code>b484049d887127a6bbd909f3dfa648f7e84fb7cea78761bca62960cb7c5ea5a2</code>
+            </div>
 
             <div class="install-steps">
               <h2>After downloading</h2>
               <ol class="steps-list">
                 <li>Open the APK from your Downloads folder and allow install from this source if Android asks.</li>
-                <li>Enable the required SMS, phone and accessibility permissions only for the automation features you use.</li>
-                <li>Set your offers, SIM choice, USSD mappings, retry rules and web order settings before going live.</li>
+                <li>Review each permission request and enable only the features you intend to use.</li>
+                <li>Set your offers, SIM choice, USSD mappings, retry rules, alerts, and optional online tools before going live.</li>
               </ol>
             </div>
           </div>
@@ -233,9 +294,9 @@
             </ul>
           </section>
           <section class="side-card reveal">
-            <h2>Need setup help?</h2>
-            <p>Support can help with permissions, offer mappings, web order setup and transaction recovery questions.</p>
-            <a class="wa-link" href="https://wa.me/254748008585" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <h2>Community help</h2>
+            <p>Join the official group for setup questions, quick notices and agent-to-agent troubleshooting.</p>
+            <a class="wa-link" href="https://chat.whatsapp.com/H2YoZHNmiuB6cxWsfOPV1I" target="_blank" rel="noopener">Join WhatsApp group</a>
           </section>
           <section class="side-card reveal">
             <h2>Before you go live</h2>
@@ -245,23 +306,96 @@
         </aside>
       </div>
     </div>
+
+    <section class="download-section" id="contacts">
+      <div class="wrap">
+        <div class="tutorial-head reveal">
+          <div>
+            <div class="tag">Contact and community</div>
+            <h2>Setup help, announcements and <em>direct contacts.</em></h2>
+          </div>
+          <p>Use the community links for quick setup support and the email addresses for account, billing, web order, or transaction recovery questions that need a written trail.</p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card reveal"><small>Group</small><h2>WhatsApp group</h2><p>Ask setup questions and follow practical agent discussions.</p><a class="primary" href="https://chat.whatsapp.com/H2YoZHNmiuB6cxWsfOPV1I" target="_blank" rel="noopener">Open group</a></article>
+          <article class="contact-card reveal"><small>Channel</small><h2>WhatsApp channel</h2><p>Follow official notices without joining group conversations.</p><a href="https://whatsapp.com/channel/0029Vb6r1jRJf05mxTtr3G2x" target="_blank" rel="noopener">Open channel</a></article>
+          <article class="contact-card reveal"><small>Telegram</small><h2>Telegram</h2><p>Use Telegram when WhatsApp is not convenient.</p><a href="https://t.me/bingwaflash" target="_blank" rel="noopener">Open Telegram</a></article>
+          <article class="contact-card reveal"><small>Email</small><h2>Email support</h2><p>Send detailed setup, account, and recovery cases.</p><a href="mailto:support@bingwaflash.co.ke">support@bingwaflash.co.ke</a><a href="mailto:bingwaflash@gmail.com" style="margin-top:8px">bingwaflash@gmail.com</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="download-section alt" id="tutorials">
+      <div class="wrap">
+        <div class="tutorial-head reveal">
+          <div>
+            <div class="tag">Tutorials</div>
+            <h2>First three guides for install and <em>setup.</em></h2>
+          </div>
+          <p>Only the first three tutorial thumbnails show here. Open the full tutorials page to search, filter by category, and play videos in a popup.</p>
+        </div>
+        <div id="tutorialGrid" class="tutorial-grid" aria-live="polite"></div>
+        <div class="view-all-row reveal">
+          <a class="ghost-link" href="/tutorials/">View all tutorials</a>
+        </div>
+        <noscript>
+          <div class="tutorial-card">
+            <small>Tutorials</small>
+            <h2>Enable JavaScript to view tutorial thumbnails</h2>
+            <p>Email support@bingwaflash.co.ke for setup help if your browser blocks scripts.</p>
+          </div>
+        </noscript>
+      </div>
+    </section>
   </main>
+
+  <div class="video-modal" id="videoModal" hidden>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+      <div class="modal-head">
+        <h2 id="videoModalTitle">Tutorial</h2>
+        <button class="modal-close" type="button" data-video-close aria-label="Close video">x</button>
+      </div>
+      <div class="modal-frame" id="videoModalFrame"></div>
+    </div>
+  </div>
 
   <footer>
     <div class="ft-in">
-      <a class="ft-logo" href="https://bingwaflash.co.ke/"><img src="/logo.png" alt="Bingwa Flash"><span class="ft-name">Bingwa Flash</span></a>
-      <div class="ft-links">
-        <a href="https://bingwaflash.co.ke/">Home</a>
-        <a href="https://bingwaflash.co.ke/#features">Features</a>
-        <a href="/">Download</a>
-        <a href="https://bingwaflash.co.ke/privacy.html">Privacy Policy</a>
-        <a href="https://bingwaflash.co.ke/terms.html">Terms</a>
-        <a href="mailto:support@bingwaflash.co.ke">Contact</a>
+      <div class="ft-about">
+        <a class="ft-logo" href="https://bingwaflash.co.ke/"><img src="/logo.png" alt="Bingwa Flash"><span class="ft-name">Bingwa Flash</span></a>
+        <p>Official installer page for Bingwa Flash, with setup contacts and thumbnail-based tutorial guides for agents.</p>
       </div>
-      <div class="ft-copy">&copy; 2026 Bingwa Flash</div>
+      <div class="ft-col">
+        <h2>Install</h2>
+        <div class="ft-links">
+          <a href="/">Download APK</a>
+          <a href="/tutorials/">Tutorials</a>
+          <a href="#contacts">Contact</a>
+          <a href="https://bingwaflash.co.ke/#workflow">Workflow</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h2>Community</h2>
+        <div class="ft-links">
+          <a href="https://chat.whatsapp.com/H2YoZHNmiuB6cxWsfOPV1I" target="_blank" rel="noopener">WhatsApp group</a>
+          <a href="https://whatsapp.com/channel/0029Vb6r1jRJf05mxTtr3G2x" target="_blank" rel="noopener">WhatsApp channel</a>
+          <a href="https://t.me/bingwaflash" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h2>Email</h2>
+        <div class="ft-links">
+          <a href="mailto:support@bingwaflash.co.ke">support@bingwaflash.co.ke</a>
+          <a href="mailto:bingwaflash@gmail.com">bingwaflash@gmail.com</a>
+          <a href="https://bingwaflash.co.ke/privacy.html">Privacy Policy</a>
+          <a href="https://bingwaflash.co.ke/terms.html">Terms</a>
+        </div>
+      </div>
     </div>
+    <div class="ft-copy">&copy; 2026 Bingwa Flash. Official download and setup support page.</div>
   </footer>
 
+  <script src="/tutorials.js"></script>
   <script>
     // Download page shares the same saved light/dark preference as root and order pages.
     function syncThemeIcon() {
@@ -278,6 +412,15 @@
       syncThemeIcon();
     };
     syncThemeIcon();
+
+    // The download page intentionally shows only three featured tutorials; the full library is /tutorials/.
+    if (window.BingwaTutorials) {
+      window.BingwaTutorials.renderPreview({
+        gridId: "tutorialGrid",
+        modalId: "videoModal",
+        limit: 3
+      });
+    }
 
     // Keep the installer page light on older Android browsers while still adding polish.
     (function () {
