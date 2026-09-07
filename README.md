@@ -2,7 +2,7 @@
 
 This repository mirrors the direct installer source requested for Bingwa Flash. The production GitHub Pages site for `download.bingwaflash.co.ke` is currently deployed from [`officialmrlyco/download`](https://github.com/officialmrlyco/download); keep release details aligned in both repositories.
 
-Current release: Bingwa Flash `v1.3.8` (Build `38`). The installer button points to the immutable GitHub release asset tagged `v38`, and the page publishes the release SHA-256 checksum for verification.
+Current release: Bingwa Flash `v1.3.9` (Build `39`). The installer button points to the immutable GitHub release asset tagged `v39`, and the page publishes the release SHA-256 checksum for verification.
 
 The page intentionally uses `noindex` meta tags instead of a blocking `robots.txt` rule. Search crawlers must be able to fetch the page before they can remove it from search results.
 
